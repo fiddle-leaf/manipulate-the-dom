@@ -69,9 +69,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
   blogPostEl.append(blogTitleEl, blogBody);
 
-  const blogPosts = document.querySelectorAll(".blog-post");
-  console.log(blogPosts);
-
   document.querySelector(".main").append(blogPostEl);
 
   // Part 8
@@ -79,13 +76,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
   quoteTitle.addEventListener("click", randomQuote(event));
 
   // Part 9
+  const blogPosts = document.querySelectorAll(".blog-post");
+  
   blogPosts.forEach(post => {
 
-    post.addEventListener("mouseout", event =>{
+    post.addEventListener("mouseout", event => {
       post.classList.toggle("purple");
     });
 
-    post.addEventListener("mouseenter", event =>{
+    post.addEventListener("mouseenter", event => {
       post.classList.toggle("red");
     })
   })
